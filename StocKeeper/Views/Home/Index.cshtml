@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Welcome to StocKeeper";
+}
+
+<div class="container mt-5">
+
+    <!-- Hero Section -->
+    <div class="jumbotron text-center text-light" style="background: linear-gradient(to right, #4a4e69, #22223b);">
+        <h1 class="display-4">Welcome to StocKeeper</h1>
+        <p class="lead">Your one-stop solution for efficient inventory management.</p>
+        <hr class="my-4" style="border-color: #c9ada7;">
+        <p>Manage your products, suppliers, and stock levels seamlessly.</p>
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Product")" role="button">Get Started</a>
+    </div>
+
+    <!-- Quick Navigation Cards -->
+    <div class="row text-light">
+        <div class="col-md-3 mb-4">
+            <div class="card bg-dark h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-box-seam display-4"></i>
+                    <h5 class="card-title mt-2">Products</h5>
+                    <p class="card-text">View and manage your product inventory.</p>
+                    <a href="@Url.Action("Index", "Product")" class="btn btn-primary btn-sm">Manage Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card bg-dark h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-people display-4"></i>
+                    <h5 class="card-title mt-2">Suppliers</h5>
+                    <p class="card-text">Keep track of your trusted suppliers.</p>
+                    <a href="@Url.Action("Index", "Supplier")" class="btn btn-primary btn-sm">Manage Suppliers</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card bg-dark h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-stack display-4"></i>
+                    <h5 class="card-title mt-2">Inventory</h5>
+                    <p class="card-text">Monitor stock levels and log adjustments.</p>
+                    <a href="@Url.Action("Index", "Inventory")" class="btn btn-primary btn-sm">View Inventory</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card bg-dark h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-file-earmark-text display-4"></i>
+                    <h5 class="card-title mt-2">Purchase Orders</h5>
+                    <p class="card-text">Create and track purchase orders.</p>
+                    <a href="@Url.Action("Index", "PurchaseOrder")" class="btn btn-primary btn-sm">View Orders</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Stats Section -->
+    <div class="mt-5 text-light">
+        <h3 class="mb-3">System Overview</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-primary text-center">
+                    <div class="card-body">
+                        <h2>@ViewBag.TotalProducts</h2>
+                        <p>Total Products</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-success text-center">
+                    <div class="card-body">
+                        <h2>@ViewBag.TotalSuppliers</h2>
+                        <p>Total Suppliers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-warning text-center">
+                    <div class="card-body">
+                        <h2>@ViewBag.LowStock</h2>
+                        <p>Low Stock Alerts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
